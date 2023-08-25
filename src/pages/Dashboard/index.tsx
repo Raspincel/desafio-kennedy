@@ -38,8 +38,8 @@ export default function Dashboard() {
                         {tools?.map( (tool, index) => { 
                             const show = verifyTags(tool.tags)
                             
-                            return show ? <ToolCard {...tool} key={index}/> : <span key={index}></span>
-                        }) }
+                            return show ? <ToolCard {...tool} key={index}/> : ""
+                        }).filter(tool => tool !== "") }
 
                 </ToolsDisplay>
             </Wrapper>
