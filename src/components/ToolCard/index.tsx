@@ -31,7 +31,7 @@ export default function ToolCard({ title, description, tags, link, id }: iTool) 
             <HeaderInfos>
                 <Header href={link}>{title}</Header>
                 
-                <RemoveToolModal id={id}/>
+                <RemoveToolModal id={id as string}/>
             </HeaderInfos>
             <Description>
                 {description}
