@@ -26,6 +26,7 @@ export default function TextArea({ id, label, placeholder, register, onChange, v
                 id={id}
                 value={value}
                 maxLength={256}
+                spellCheck={false}
             />
             { error && error.trim() !== "" && <ErrorText>{error}</ErrorText> }
         </TextAreaContainer>
