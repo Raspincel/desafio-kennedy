@@ -1,18 +1,23 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AddToolModal from "../../components/AddToolModal";
 import FemaquaName from "../../components/FemaquaName";
 import SearchBar from "../../components/SearchBar";
 import ToolCard from "../../components/ToolCard";
-import { useSearch, useTool } from "../../hooks/contexts";
+import { useAuthentication, useSearch, useTool } from "../../hooks/contexts";
 import { Actions, DashboardContainer, ToolsDisplay, Wrapper } from "./style";
 
 export default function Dashboard() {
     const { getTools, tools } = useTool()
     const { searchTerms } = useSearch()
-    
+    const { isAuthenticated } = useAuthentication()
+    const navigate = useNavigate()
+
     useEffect(()=> {
+        if (!isAuthenticated) navigate('/login')
+
         getTools()
-    }, [getTools])
+    }, [getTools, isAuthenticated, navigate])
 
     const verifyTags = (tags: string[])=> {
         if (!searchTerms) return true

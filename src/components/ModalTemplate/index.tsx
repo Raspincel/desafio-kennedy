@@ -24,7 +24,7 @@ export default function ModalTemplate({ onClose, children, handleSubmit, showMod
             style={{ overflowY: 'scroll' }}
         >
             <ModalWrapper>
-                <ModalContainer onSubmit={handleSubmit} $small={small}>
+                <ModalContainer onSubmit={handleSubmit} $small={small}  autoComplete="off">
                     <ModalHeader>
                         <Title>{title}</Title>
                         <CloseIcon data-testid="close-icon" onClick={()=>onClose()}/>
