@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle,  } from 'styled-components';
 
 //Reset CSS:
 export const GlobalStyle = createGlobalStyle`
@@ -27,8 +27,6 @@ export const GlobalStyle = createGlobalStyle`
         --lighterred: #FCC6C5;
         --lightestred: #FCD7D6;
         --mostlightestred: #FEEFEE;
-
-
     }
 
 
