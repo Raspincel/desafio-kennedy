@@ -5,7 +5,7 @@ export const Container = styled.section`
     flex-direction: column;
     width: 100%;
     padding: min(20px, 5vw);
-    border: 1px solid var(--ink);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     gap: min(10px, 5vh);
 `

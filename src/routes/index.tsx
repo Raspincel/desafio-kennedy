@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
-import Login from '../pages/Login'
+import Redirect from '../pages/Redirect'
+import { lazy } from 'react'
+
+const Login = lazy(()=> import('../pages/Login') )
+const Dashboard = lazy(()=> import('../pages/Dashboard') )
 
 export default function MakeRoutes() {
 
@@ -8,6 +11,7 @@ export default function MakeRoutes() {
         <Routes>
             <Route path='/login' Component={Login}/>
             <Route path='/dashboard' Component={Dashboard}/>
+            <Route path='/*' Component={Redirect}/>
         </Routes>
     )
 }

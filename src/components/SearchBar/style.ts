@@ -5,7 +5,7 @@ export const SearchBarContainer = styled.span`
     position: relative;
     width: min(300px, 100%);
     display: flex;
-
+    
     input {
         padding-left: 40px;
     }
@@ -14,7 +14,7 @@ export const SearchBarContainer = styled.span`
 export const StyledSearchIcon = styled(Logo)`
     position: absolute;
     top: 50%;
-    transform: translateY(-100%);
+    transform: translateY(-50%);
     left: 15px;
     width: 16px;
     height: 16px;

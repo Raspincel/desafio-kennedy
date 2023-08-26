@@ -6,26 +6,45 @@ import { LoginSchema } from '../../schemas/login'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { iLoginData, UseForm } from '../../utils/interfaces'
 import { useAuthentication } from '../../hooks/contexts'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ButtonPrimaryNeutral from '../../components/ButtonPrimaryNeutral'
+import Spinner from '../../components/Spinner'
 
 export default function Login() {
-    const { login, isAuthenticated } = useAuthentication()
-
+    const navigate = useNavigate()
+    
+    const { login, isAuthenticated, isSigningIn } = useAuthentication()
+    const [isLoading, setIsLoading] = useState(false)
     const { register, trigger, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(LoginSchema)
     });
 
     const onLogin = async ({ email, password }: iLoginData)=> {
         await trigger()
+        setIsLoading(true)
         login({ email, password })
     }
 
-    const navigate = useNavigate()
     useEffect(()=> {
         if (isAuthenticated) navigate('/dashboard')
+
     }, [navigate, isAuthenticated])
+
+    useEffect(()=> {
+        if (!isAuthenticated && !isSigningIn)
+            setIsLoading(false)
+    }, [isSigningIn, isAuthenticated])
+
+    if (isLoading) return (
+        <LoginContainer>
+            <LoginArea>
+                <Spinner/>
+            </LoginArea>
+
+            <BackgroundImage/>
+        </LoginContainer>
+    )
 
     return (
         <LoginContainer>

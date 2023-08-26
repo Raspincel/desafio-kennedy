@@ -3,15 +3,20 @@ import api from "../utils/axios";
 import { iLoginData } from "../utils/interfaces";
 
 export const AuthenticationContext = createContext<{
-    isAuthenticated: boolean;
-    setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;  
-    login: (data: iLoginData) => void;
-    logout: () => void;
+    isAuthenticated: boolean
+    setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>
+
+    isSigningIn: boolean
+    setIsSigningIn: React.Dispatch<React.SetStateAction<boolean>>
+    login: (data: iLoginData) => void
+    logout: () => void
     token: string
   
 }>({
     isAuthenticated: false,
-    setIsAuthenticated: () => {},  
+    setIsAuthenticated: () => {},
+    isSigningIn: false,
+    setIsSigningIn: ()=> {},
     login: () => {},
     logout: () => {},
     token: ""
@@ -19,16 +24,21 @@ export const AuthenticationContext = createContext<{
 
 export const AuthenticationProvider = ({ children }: { children: JSX.Element })=> {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [isSigningIn, setIsSigningIn] = useState(false)
+
     const [token, setToken] = useState("")
 
     const login = useCallback(async (data: iLoginData)=> {
         try {
+            setIsSigningIn(true)
             const response = await api.post('/auth/login', data)
 
             setToken(response.data.access_token) 
             setIsAuthenticated(true)
+            setIsSigningIn(false)
         } catch(err) {
             console.log(err)
+            setIsSigningIn(false)
         }
     }, [])
 
@@ -44,7 +54,8 @@ export const AuthenticationProvider = ({ children }: { children: JSX.Element })=
     return (
         <AuthenticationContext.Provider value={{
             isAuthenticated, setIsAuthenticated,
-            login, logout, token
+            login, logout, token,
+            isSigningIn, setIsSigningIn
         }}>
             {children}
         </AuthenticationContext.Provider>

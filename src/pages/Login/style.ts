@@ -4,6 +4,7 @@ import backgroundImage from '../../assets/images/software_login_page.jpg'
 export const LoginArea = styled.main`
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: min(5vw, 30px);
     margin-top: min(10vh, 40px);
