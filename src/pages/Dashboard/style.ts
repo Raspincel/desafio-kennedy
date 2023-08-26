@@ -26,4 +26,5 @@ export const Actions = styled.span`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: min(20px, 5vw);
 `
