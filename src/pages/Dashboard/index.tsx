@@ -17,8 +17,14 @@ export default function Dashboard() {
     const verifyTags = (tags: string[])=> {
         if (!searchTerms) return true
         const terms = searchTerms.trim().toLowerCase().split(' ')
+        const plainTags = tags.join(' ')
+
         for (const term of terms) {
-            if (!tags.includes(term))
+            // checks if all search terms at least partially match the tags
+            // using regex to always check the start of each string
+            // .includes() returned true even if it was in the middle
+            // can't quite use .startsWith() due to it all being a single string
+            if (!plainTags.match(new RegExp(`.*(?:^|\\s)${term}.*`, 'ig')))
                 return false
         }
 
