@@ -46,9 +46,9 @@ export default function ToolCard({ title, description, tags, link, id }: iTool) 
                             $isSearched={isTagBeingSearched} 
                             key={index}
                         >
-                            #{tag}
+                            {`#${tag}`}
                         </Tag>
-                        )
+                    )
                 })}
             </Tags>
         </Container>

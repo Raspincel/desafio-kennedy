@@ -27,7 +27,7 @@ export default function ModalTemplate({ onClose, children, handleSubmit, showMod
                 <ModalContainer onSubmit={handleSubmit} $small={small}>
                     <ModalHeader>
                         <Title>{title}</Title>
-                        <CloseIcon onClick={()=>onClose()}/>
+                        <CloseIcon data-testid="close-icon" onClick={()=>onClose()}/>
                     </ModalHeader>
                     <ModalBody>
                         {children}

@@ -8,8 +8,3 @@ export const AddIcon = styled(RawAddIcon)`
         stroke: var(--green) !important;
     }
 `
-
-export const ErrorText = styled.p`
-    color: var(--red);
-    font-size: 0.8rem;
-`

@@ -39,3 +39,8 @@ export const Label = styled(CFormLabel)`
     color: var(--ink);
     font-size: 1.05rem;
 `
+
+export const ErrorText = styled.p`
+    color: var(--red);
+    font-size: 0.8rem;
+`

@@ -79,7 +79,7 @@ export default function AddToolModal() {
             
                 <TextInput 
                     id="tags" 
-                    placeholder="Insira as tags associadas à ferramenta (separe-as por espaços, sem vírgulas ou #'s"
+                    placeholder="Insira as tags associadas à ferramenta (ex: communication social chat call)"
                     label="Tags"
                     register={register as UseForm}
                     error={errors?.tags?.message}

@@ -10,7 +10,7 @@ export const ModalWrapper = styled.span`
     justify-content: center;
 `
 
-export const ModalContainer = styled.form<{ $small?: boolean }>`
+export const ModalContainer = styled.form.attrs({ 'aria-label': 'form' })<{ $small?: boolean }>`
     width: ${ props => props.$small ? 'min(600px, 90vw)' : 'min(1200px, 90vw)'};
     padding: min(30px, 2.5vw);
     display: flex;

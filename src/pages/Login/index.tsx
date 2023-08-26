@@ -40,16 +40,16 @@ export default function Login() {
                             label='E-mail' 
                             placeholder='Insira seu e-mail' 
                             type='email'
+                            error={errors.email?.message}
                         />
-                        {errors.email && errors.email?.message}
                         <TextInput
                             register={register as UseForm}
                             id='password' 
                             label='Senha' 
                             placeholder='Insira sua senha' 
                             type='password'
+                            error={errors.password?.message}
                         />
-                        {errors.password && errors.password?.message}
                         
                         <ButtonPrimaryNeutral type="submit">
                             Entrar

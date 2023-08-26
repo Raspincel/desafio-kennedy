@@ -1,7 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import { RegisterType } from "../../utils/interfaces";
-import { ErrorText } from "../AddToolModal/style";
-import { Label, TextAreaContainer, TextAreaContent } from "./style";
+import { ErrorText, Label, TextAreaContainer, TextAreaContent } from "./style";
 
 interface Props {
     placeholder: string;

@@ -1,7 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import { RegisterType } from "../../utils/interfaces";
-import { ErrorText } from "../AddToolModal/style";
-import { Input, InputContainer, Label } from "./style";
+import { ErrorText, Input, InputContainer, Label } from "./style";
 
 interface Props {
     placeholder: string;
@@ -27,7 +26,7 @@ export default function TextInput({ id, label, placeholder, register, onChange, 
                 id={id}
                 value={value}
             />
-            <ErrorText>{error}</ErrorText>
+            { error && <ErrorText>{error}</ErrorText> }
         </InputContainer>
     )
 }
