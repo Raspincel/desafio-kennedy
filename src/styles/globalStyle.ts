@@ -1,7 +1,8 @@
 import { createGlobalStyle,  } from 'styled-components';
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 
 //Reset CSS:
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
     :root {
         --ink: #170C3A;
         --pale-grey: #EBEAED;
@@ -52,3 +53,9 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 `
+
+export const decorators = [
+    withThemeFromJSXProvider({
+      GlobalStyles,
+    }),
+  ];

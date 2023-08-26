@@ -2,7 +2,7 @@ import { UseFormRegister } from "react-hook-form";
 import { RegisterType } from "../../utils/interfaces";
 import { ErrorText, Input, InputContainer, Label } from "./style";
 
-interface Props {
+export interface Props {
     placeholder: string;
     id: string;
     label?: string;

@@ -12,7 +12,6 @@ export const Button = styled.button<Props>`
     all: unset;
     color: var(--${ props => props.$color });
     background-color: var(--${ props => props.$bg });
-    width: min(130px, 100%);
     box-sizing: border-box;
 
     font-size: 1rem;

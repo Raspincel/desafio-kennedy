@@ -5,9 +5,9 @@ interface Props {
     bgColor: string
     bgHover: string
     bgActive: string
-    type?: 'button' | 'submit' | 'reset'
+    type?: 'button' | 'submit' | 'reset' | string
     children: string | JSX.Element | JSX.Element[]
-    level: 'primary' | 'secondary' | 'terciary'
+    level: 'primary' | 'secondary' | 'terciary' | string
     onClick?: ()=>void
 
 }
@@ -15,12 +15,12 @@ export default function ButtonTemplate({ color, bgColor, bgHover, bgActive, type
 
     return (
         <Button 
-            type={type}
+            type={type as 'button' | 'submit' | 'reset'}
             $color={color}
             $bg={bgColor}
             $bgHover={bgHover}
             $bgActive={bgActive}
-            $level={level}
+            $level={level as 'primary' | 'secondary' | 'terciary'}
             onClick={onClick}
         >
             {children}
