@@ -33,9 +33,31 @@ Certifique-se de ter o Docker Compose instalado em sua máquina. Se não tiver, 
 
 4. Abra um navegador da web e insira o endereço IP fornecido para acessar o site.
 
-### Yarn
+### Modo de produção
 
-Certifique-se de ter o Node.js e o Yarn instalados em sua máquina. Se não tiver, você pode baixá-los em: Node.js e Yarn.
+Certifique-se de ter o Node.js e o Yarn instalados em sua máquina. Se não tiver, você pode baixá-los em: [Node.js](https://nodejs.org/en) e [Yarn](https://yarnpkg.com).
+
+1. No terminal, navegue até a pasta do projeto:
+
+    `$ cd desafio-kennedy`
+
+2. Instale as dependências do projeto com o seguinte comando:
+
+    `$ yarn`
+
+3. Faça uma build do projeto com o seguinte comando:
+
+    `$ yarn build`
+
+4. Inicie o servidor de produção com o seguinte comando:
+
+    `$ yarn preview`
+
+5. Abra um navegador da web e acesse o site em [http://localhost:4173](http://localhost:4173).
+
+### Modo de desenvolvedor
+
+Certifique-se de ter o Node.js e o Yarn instalados em sua máquina. Se não tiver, você pode baixá-los em: [Node.js](https://nodejs.org/en) e [Yarn](https://yarnpkg.com).
 
 1. No terminal, navegue até a pasta do projeto:
 
@@ -49,7 +71,7 @@ Certifique-se de ter o Node.js e o Yarn instalados em sua máquina. Se não tive
 
     `$ yarn dev`
 
-4. Abra um navegador da web e acesse o site em http://localhost:5173.
+4. Abra um navegador da web e acesse o site em [http://localhost:5173](http://localhost:5173).
 
 ## Acesso à Versão Online
 
