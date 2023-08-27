@@ -9,7 +9,7 @@ Para obter uma cópia do código-fonte do site, você pode clonar o repositório
 1. Abra o terminal no seu computador.
 2. Execute o seguinte comando para clonar o repositório:
 
-    git clone https://github.com/Raspincel/desafio-kennedy.git
+    `$ git clone https://github.com/Raspincel/desafio-kennedy.git`
 
 Isso criará uma pasta chamada desafio-kennedy no diretório atual com todos os arquivos do projeto.
 
@@ -23,11 +23,11 @@ Certifique-se de ter o Docker Compose instalado em sua máquina. Se não tiver, 
 
 1. No terminal, navegue até a pasta do projeto:
 
-    cd desafio-kennedy
+    `$ cd desafio-kennedy`
 
 2. Execute o seguinte comando para iniciar o contêiner e construir a imagem:
 
-    sudo docker-compose up
+    `$ sudo docker-compose up`
 
 3. Após o processo de criação do contêiner e da imagem, você verá um endereço IP no terminal.
 
@@ -39,15 +39,15 @@ Certifique-se de ter o Node.js e o Yarn instalados em sua máquina. Se não tive
 
 1. No terminal, navegue até a pasta do projeto:
 
-    cd desafio-kennedy
+    `$ cd desafio-kennedy`
 
 2. Instale as dependências do projeto com o seguinte comando:
 
-    yarn
+    `$ yarn`
 
 3. Inicie o servidor de desenvolvimento com o seguinte comando:
 
-    yarn dev
+    `$ yarn dev`
 
 4. Abra um navegador da web e acesse o site em http://localhost:5173.
 
