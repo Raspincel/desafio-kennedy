@@ -20,7 +20,6 @@ export default function AddToolModal() {
     const onClose = ()=> {
         reset()
         setShowAddModal(false)
-        console.log(errors)
     }
 
     const onCreateTool = async ({ description, link, tags: stringTags, title }: iCreateTool)=> {
